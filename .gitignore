@@ -1,7 +1,11 @@
-*.jpg
-*.jpeg
+**/*.jpg
+**/*.jpeg
 
 .ipynb_checkpoints
-
 */.ipnyb_checkpoints/*
 
+logs/*
+./logs/
+**/*.h5
+
+__pycache__/
