@@ -95,6 +95,7 @@ def run(num_units_first_dense,
         'zoom_range' : 0.3,
         'width_shift_range': 0.3,
         'height_shift_range': 0.3,
+        'shear_range': .15,
         'rotation_range': 10}
 
     batch_size = 32
@@ -106,6 +107,7 @@ def run(num_units_first_dense,
                                        zoom_range=prod_aug['zoom_range'],
                                        width_shift_range=prod_aug['width_shift_range'],
                                        height_shift_range=prod_aug['height_shift_range'],
+                                       shear_range=prod_aug['shear_range'],
                                        rotation_range=prod_aug['rotation_range'])
     validation_datagen = ImageDataGenerator(rescale=1./255)
 

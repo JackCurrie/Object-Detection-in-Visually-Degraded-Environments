@@ -39,9 +39,9 @@ def run(num_units_first_dense,
     ################################################
     #    CHANGE THESE EACH EXPERIMENT
     #
-    weight_file = 'VGG19_transfer[m1]_2.h5'
-    json_file = 'VGG19_tansfer[m1]_2.json'
-    epochs = 40
+    weight_file = 'VGG19_transfer[m1]_4.h5'
+    json_file = 'VGG19_tansfer[m1]_4.json'
+    epochs = 80
     ################################################
 
     img_width, img_height = 128,128
@@ -74,16 +74,17 @@ def run(num_units_first_dense,
         'zoom_range' : 0.3,
         'width_shift_range': 0.3,
         'height_shift_range': 0.3,
-        'rotation_range': 10}
+        'shear_range': .15,
+        'rotation_range': 12}
 
     batch_size = 32
 
-    # NO AUGMENTATION APPLIED FOR HYPERPARAM SEARCH
     train_datagen = ImageDataGenerator(rescale=1./255,
                                        horizontal_flip=prod_aug['horizontal_flip'],
                                        zoom_range=prod_aug['zoom_range'],
                                        width_shift_range=prod_aug['width_shift_range'],
                                        height_shift_range=prod_aug['height_shift_range'],
+                                       shear_range=prod_aug['shear_range'],
                                        rotation_range=prod_aug['rotation_range'])
     validation_datagen = ImageDataGenerator(rescale=1./255)
 
